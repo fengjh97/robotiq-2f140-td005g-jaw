@@ -1,3 +1,4 @@
+import os
 import trimesh, numpy as np, zipfile, uuid, json, re, sys, io
 K='/tmp/claude-0/-home-claude/27335561-5a03-5cc1-9d07-f0eace076c34/scratchpad/kin/out6/'
 ORCA='/tmp/claude-0/-home-claude/27335561-5a03-5cc1-9d07-f0eace076c34/scratchpad/slicer/job/out_x/x/'
@@ -5,7 +6,8 @@ liner_extruder = sys.argv[1] if len(sys.argv)>1 else '2'
 out = sys.argv[2] if len(sys.argv)>2 else 'jaw_v6_onepiece_H2DPro.3mf'
 MODE=sys.argv[3] if len(sys.argv)>3 else 'jaws'
 if MODE=='jaws':
-    body=trimesh.load(K+'CP_body_PLA.stl'); liner=trimesh.load(K+'CP_liner_TPU.stl')
+    import os
+    body=trimesh.load(os.environ.get('BODY',K+'CP_body_PLA.stl')); liner=trimesh.load(os.environ.get('LINER',K+'CP_liner_TPU.stl'))
     root=trimesh.creation.box(extents=[66,26.5,66]); root.apply_translation([0,50-26.5/2+0.5,31])   # print-Y 24..51 = mount end
     parts=[('jaw_body_PLA',body,'normal_part','1',{}),
            ('liner_TPU_fins',liner,'normal_part',liner_extruder,{}),

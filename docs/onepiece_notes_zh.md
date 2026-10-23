@@ -1,4 +1,4 @@
-# 一体成型打印说明：jaw_v6_onepiece_H2DPro.3mf
+# 一体成型打印说明：final_S/M/L_onepiece_H2DPro.3mf（选择跟试作件同尺寸的文件）
 
 **用 Bambu Studio 直接打开这个文件，点切片，然后打印。**
 

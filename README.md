@@ -8,15 +8,26 @@ Robotiq 2F-140 自适应夹爪的自制指尖，用来从上往下抓**立着放
 ## 状态
 - [x] 运动学搜索、碰撞检查、有限元分析（PLA）
 - [x] 试作件文件（S/M/L 三种尺寸）
-- [ ] **在真起子上试装 → 确定尺寸**（目前正式件按 M 尺寸做）
+- [x] 正式件 S/M/L 三种尺寸都已做好
+- [ ] **在真起子上试装 → 选尺寸**
 - [ ] 打印正式件，装到夹爪上抓取测试
+
+## 流程：打试作件 → 选尺寸 → 打同尺寸的正式件
+
+| 试作件刻痕 | 尺寸 | 正式件文件 |
+|---|---|---|
+| 1 道 | S（握把偏细，环小 0.6 mm） | `2_final/final_S_onepiece_H2DPro.3mf` |
+| 2 道 | M（按设计尺寸） | `2_final/final_M_onepiece_H2DPro.3mf` |
+| 3 道 | L（握把偏粗，环大 0.6 mm） | `2_final/final_L_onepiece_H2DPro.3mf` |
+
+如果三个都不合适（S 还太松，或者 L 还太紧），把情况告诉 Claude，再加做更小或更大的尺寸。
 
 ## 怎么用（详细步骤见 [`docs/manual_H2DPro_zh.md`](docs/manual_H2DPro_zh.md)）
 | 目录 | 内容 |
 |---|---|
 | [`1_trial/`](1_trial) | **试作件**：`trial1_PLA_rings_SML.3mf`（约 61 分钟）+ `trial2_TPU_liners_SML.3mf`（约 25 分钟）。拿到真握把上试，挑出最合适的尺寸 |
-| [`2_final/`](2_final) | **正式件**：`jaw_v6_onepiece_H2DPro.3mf`。一个文件打完两个夹爪，PLA 和 TPU 熔成一体，根部填充 100%。约 8 小时 44 分，PLA 254 g，TPU 12 g |
-| [`3_separate_parts/`](3_separate_parts) | 不熔合时用的分体 STL：本体和内衬分开打，内衬再卡进去 |
+| [`2_final/`](2_final) | **正式件**：`final_S/M/L_onepiece_H2DPro.3mf`。**试作件哪个尺寸合适，就打同字母的文件**。一个文件打完两个夹爪，PLA 和 TPU 熔成一体，根部填充 100%。每个文件约 8 小时 44 分，PLA 约 254 g，TPU 约 12 g |
+| [`3_separate_parts/`](3_separate_parts) | 分体 STL（S/M/L 各一套）：本体和内衬分开打，内衬再卡进去 |
 | [`cad/`](cad) | STEP 文件和起子的近似模型 |
 | [`docs/`](docs) | 操作手册、强度分析、设计说明 |
 | [`scripts/`](scripts) | 运动学模型、姿态搜索、参数化 CAD、有限元、3MF 生成脚本 |
