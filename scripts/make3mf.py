@@ -14,6 +14,19 @@ if MODE=='jaws':
            ('root_100pct',root,'modifier_part',None,{'sparse_infill_density':'100%'})]
     objects=[('jaw_A',(175-40,160),parts),('jaw_B',(175+40,160),parts)]
     OBJ_CFG={'wall_loops':'5','sparse_infill_density':'20%','top_shell_layers':'6','bottom_shell_layers':'6'}
+elif MODE=='v7final':
+    body=trimesh.load(os.environ['BODY'])
+    root=trimesh.creation.box(extents=[66,26.5,66]); root.apply_translation([0,50-26.5/2+0.5,31])
+    parts=[('jaw_v7_PLA',body,'normal_part','1',{}),('root_100pct',root,'modifier_part',None,{'sparse_infill_density':'100%'})]
+    objects=[('jaw_A',(175-40,160),parts),('jaw_B',(175+40,160),parts)]
+    OBJ_CFG={'wall_loops':'5','sparse_infill_density':'20%','top_shell_layers':'6','bottom_shell_layers':'6'}
+elif MODE=='v7trial':
+    V7='/tmp/claude-0/-home-claude/27335561-5a03-5cc1-9d07-f0eace076c34/scratchpad/kin/v7/'
+    objects=[]
+    for ci,tag in enumerate(('S','M','L')):
+        b=trimesh.load(V7+f'trial_v7_{tag}.stl'); pp=[(f'ring_v7_{tag}_PLA',b,'normal_part','1',{})]
+        for ri in range(2): objects.append((f'ring_{tag}_{ri+1}',(175+(ci-1)*72,140+ri*36),pp))
+    OBJ_CFG={'wall_loops':'3','sparse_infill_density':'15%','top_shell_layers':'4','bottom_shell_layers':'4'}
 else:
     TR='/tmp/claude-0/-home-claude/27335561-5a03-5cc1-9d07-f0eace076c34/scratchpad/kin/trial/'
     objects=[]
@@ -67,6 +80,7 @@ ps['filament_settings_id']=['Bambu PLA Basic @BBL H2DP','Bambu TPU 95A HF @BBL H
 ps['printer_settings_id']='Bambu Lab H2D Pro 0.4 nozzle'
 ps['filament_map_mode']='Manual'; ps['filament_map']=['1','2']
 ps['enable_prime_tower']='1' if MODE=='jaws' else '0'
+if MODE.startswith('v7'): ps['filament_colour']=['#F0F0F0','#F2754E']
 ps['wipe_tower_x']=['145']; ps['wipe_tower_y']=['240']
 for k,v in list(ps.items()):
     if isinstance(v,list) and len(v)==1 and (k.startswith('filament') or k=='default_filament_colour'):
