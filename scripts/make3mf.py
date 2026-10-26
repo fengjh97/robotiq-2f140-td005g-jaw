@@ -16,7 +16,7 @@ if MODE=='jaws':
     OBJ_CFG={'wall_loops':'5','sparse_infill_density':'20%','top_shell_layers':'6','bottom_shell_layers':'6'}
 elif MODE=='v7final':
     body=trimesh.load(os.environ['BODY'])
-    root=trimesh.creation.box(extents=[66,26.5,66]); root.apply_translation([0,50-26.5/2+0.5,31])
+    root=trimesh.creation.box(extents=[body.extents[0]+4,26.5,66]); root.apply_translation([0,50-26.5/2+0.5,31])
     parts=[('jaw_v7_PLA',body,'normal_part','1',{}),('root_100pct',root,'modifier_part',None,{'sparse_infill_density':'100%'})]
     objects=[('jaw_A',(175-40,160),parts),('jaw_B',(175+40,160),parts)]
     OBJ_CFG={'wall_loops':'5','sparse_infill_density':'20%','top_shell_layers':'6','bottom_shell_layers':'6'}
