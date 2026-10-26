@@ -81,6 +81,7 @@ ps['printer_settings_id']='Bambu Lab H2D Pro 0.4 nozzle'
 ps['filament_map_mode']='Manual'; ps['filament_map']=['1','2']
 ps['enable_prime_tower']='1' if MODE=='jaws' else '0'
 if MODE.startswith('v7'): ps['filament_colour']=['#F0F0F0','#F2754E']
+ps['curr_bed_type']='Textured PEI Plate'
 ps['wipe_tower_x']=['145']; ps['wipe_tower_y']=['240']
 for k,v in list(ps.items()):
     if isinstance(v,list) and len(v)==1 and (k.startswith('filament') or k=='default_filament_colour'):
