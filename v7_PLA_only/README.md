@@ -1,5 +1,7 @@
 # v7：纯 PLA 版（不用 TPU）
 
+> **拷 U 盘直接打 → 用 [`USB_gcode/`](USB_gcode) 里的 `.gcode.3mf`**（已经切好片；PLA 装在哪个喷头，就选文件名带 `_LEFT` 还是 `_RIGHT` 的）。这一层的 `.3mf` 是工程文件，要先在 Bambu Studio 里切片才能打。
+
 **只有 PLA 时用这个文件夹**：只用左喷头，全程不换料。
 
 ## 文件
