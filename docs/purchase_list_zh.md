@@ -14,7 +14,7 @@
 | 6 | A250T | 1.75 mm PETG，1 kg，带料盘 | 例：Bambu PETG HF（スプール付き） | 1 | 必买 |
 | 7 | A250T | 双头打印模块 | Snapmaker SNM-23440 | 1 | 想打碳纤时才买 |
 | 8 | A250T | 双头模块用 0.4 mm 硬化钢喷嘴 | Snapmaker SNM-23445 | 1–2 | 跟 7 一起买 |
-| 9 | Robotiq | 夹爪转接口（ISO 9409，带 1 m 短线） | GRP-CPL-062 | 1 | 必买（现在用的是 M8 的 e-Series 转接口，要长线直连 PC 就换这个） |
+| 9 | Robotiq | 夹爪转接口（ISO 9409，带 1 m 短线） | GRP-CPL-062 | 1 | 必买（现在插在 FANUC CRX 手腕上的是 M8 转接口，要长线直连 PC 就换这个） |
 | 10 | Robotiq | 10 m 高柔性线（M12 直头 → 散线） | CBL-COM-2065-10-HF | 1 | 必买 |
 | 11 | Robotiq | USB 转 RS485 | ACC-ADT-USB-RS485 | 1 | 必买 |
 | 12 | Robotiq | 24 V 导轨电源（2.5 A） | Mean Well HDR-60-24 | 1 | 必买 |
@@ -110,7 +110,10 @@
 
 ## 3. Robotiq 2F-140 → PC（RS485，长线方案）
 
-> **现状**：现在装的是 M8 插头的 e-Series 转接口（方案 B 那种）。它配的线只能台面调试，要长线直连 PC，就换 GRP-CPL-062 走方案 A。如果夹爪装在 UR e-Series 手腕上，也可以不买线，让 UR 驱动把手腕的 RS485 转发给 PC。
+> **现状**：夹爪直接插在 FANUC CRX 的手腕上。Robotiq 的 CRX 套件（2F-140 是 AGC-CRX-KIT-140）用的就是 M8 的 e-Series 转接口 GRP-ES-CPL-062，它的接口和针脚跟 CRX 手腕一致，所以现在是方案 B 的情况。
+> - **要长线直连 PC**：换成 GRP-CPL-062 走方案 A。CRX 法兰和 UR 一样是 ISO 9409-1-50-4-M6，可以直接装；10 m 线沿机械臂外侧走，手腕接口不用。
+> - **只想先在台面上用 PC 试控制**：买 ACC-TRBLS-KIT-M8 就够，但不能在机械臂运动时用。
+> - **不改线**：继续插在手腕上，装 Robotiq CRX 插件，从 CRX 控制器（TP / KAREL）控制夹爪。
 
 ### 先看转接口（coupling）
 
@@ -247,6 +250,8 @@ GMSL2 官方测过最长 15 m，超过 16–20 m 信号损失大，容易掉线�
 - [Robotiq – 2F 说明书 Installation（电源、保险丝）](https://assets.robotiq.com/website-assets/support_documents/document/online/2F-85_2F-140_TM_InstructionManual_HTML5_20190503.zip/2F-85_2F-140_TM_InstructionManual_HTML5/Content/3.%20Installation.htm)
 - [Robotiq – 更长的 e-Series 线](https://blog.robotiq.com/knowledge/longer-e-series-cable)
 - [Robotiq – ACC-TRBLS-KIT-M8](https://blog.robotiq.com/knowledge/using-the-acc-trbls-kit-m8-troubleshooting-cable-kit-for-robotiq-grippers)
+- [Robotiq – FANUC CRX 用 Robotiq 夹爪](https://blog.robotiq.com/knowledge/using-robotiq-adaptive-grippers-with-fanuc-crx-robots)
+- [Robotiq 论坛 – CRX 手腕可用 GRP-ES-CPL-062](https://dof.robotiq.com/discussion/2218)
 - [Robotiq – UR 转接口和对应线缆](https://blog.robotiq.com/knowledge/couplings-and-cables-ur-5-1736280767661)
 - [READY Robotics – 接线针脚表](https://www.ready-robotics.com/639226a789d6f4bdf9243613/63c9612a40371553b9f89e4d_Setting_Up_a_Robotiq_Gripper_v5.1.0.pdf)
 - [manualshive – 加长线规格（22 AWG / 24 AWG）](https://manualshive.com/ru/manual/robotiq/2-finger-140/1471358?page=6)
