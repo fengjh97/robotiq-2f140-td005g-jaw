@@ -20,8 +20,8 @@
 | 12 | Robotiq | 24 V 导轨电源（2.5 A） | Mean Well HDR-60-24 | — | UR5e 手腕直连后不需要（手腕供电） |
 | 13 | Robotiq | 2 A 保险丝（电源没有过流保护时） | Phoenix Contact 0916605 | — | 不需要 |
 | 14 | ZED 2i | 5 m / 10 m 螺丝锁 USB 3.0 Type-C 线 | CBL-221400 / CBL-221500 | 1 | 按长度二选一 |
-| 15 | ZED | 4 口 PCIe USB 3.0 卡（4 个独立通道） | StarTech PEXUSB3S44V | 1 | 推荐 |
-| 16 | ZED | 工业级外部供电 USB 3.0 Hub | StarTech ST4300USBM 或 ST4300USBMS | 1 | 必须用 Hub 时才买 |
+| 15 | ZED | 4 口 PCIe USB 3.0 卡（4 个独立通道） | StarTech PEXUSB3S44V | — | 不需要（相机都接 ZED Box，不插 PC） |
+| 16 | ZED | 工业级外部供电 USB 3.0 Hub | StarTech ST4300USBM 或 ST4300USBMS | — | 不需要；ZED Box 口不够接键盘鼠标时再买，相机不要走 Hub |
 | 17 | ZED Mini | USB 3.0 Type-C 线 4 m | CBL-211200 | 1 | 必买 |
 | 18 | H2D Pro | Bambu AMS HT（单料位烘干送料，最高 85 °C） | SA008 | — | 已有，不用买 |
 
