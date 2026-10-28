@@ -17,7 +17,7 @@
 | 7 | A250T | Bambu PETG-CF（1 kg，带料盘） | — | 1 |
 | 8 | A250T | Bambu Support for PLA/PETG（0.5 kg） | S05-C0-1.75-500-SPL | 1 |
 | 9 | ZED X Mini | GMSL2 Fakra 延长线 5 m（公-母，接原配短线） | CBL-310200 | 1 |
-| 10 | ZED 2i | 5 m 螺丝锁 USB 3.0 Type-C 线（插 ZED Box） | CBL-221400（装得远换 10 m CBL-221500） | 1 |
+| 10 | ZED 2i | 螺丝锁 USB 3.0 Type-C 线 | 不用买（原配 4 m 够用；装得远再买 10 m CBL-221500） | 0 |
 | 11 | 网络 | Cat6 网线（PC↔ZED Box、PC↔UR 控制柜） | 按距离，一般 5–10 m | 2 |
 | 12 | 网络 | 5 口千兆交换机（PC 只有一个网口时） | 例：TP-Link TL-SG105 | 1 |
 
