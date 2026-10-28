@@ -1,0 +1,80 @@
+采购清单（定稿）2026-10-28
+系统：UR5e + Robotiq 2F-140 + ZED X Mini / ZED 2i + ZED Box + Bambu H2D Pro + Snapmaker A250T
+价格为估算（日元），下单前以官网为准。
+
+====================================================
+一、要买的
+====================================================
+
+【3D 打印 - H2D Pro】
+ 1. Bambu PAHT-CF（黑，1kg，带料盘）              x1   约 8,000–10,000
+ 2. Bambu Support for PA/PET（0.5kg）             x1   约 5,000–6,500
+    料号 S03-G1-1.75-500-SPL
+ 3. Bambu PLA-CF（1kg，带料盘）                    x2   约 12,000（H2D Pro / A250T 各一卷，官方店 ¥5,980/卷）
+ 4. Bambu 胶棒                                     x1   约 1,000
+
+【3D 打印 - Snapmaker A250T 改装】
+ 5. Snapmaker 双头打印模块 SNM-23440              x1   约 39,000（官方全球店 $259，日本本地仓发货）
+ 6. 双头模块用 0.4mm 硬化钢热端 SNM-23445         x2   约 6,000–10,000
+ 7. Bambu PETG-CF（1kg，带料盘）                   x1   约 5,500–6,500
+ 8. Bambu Support for PLA/PETG（0.5kg）           x1   约 5,300–6,900
+    料号 S05-C0-1.75-500-SPL
+
+【线缆 - 相机 / 网络】
+ 9. ZED X Mini 用 GMSL2 Fakra 延长线 5m（公-母）  x1   约 4,000–8,000
+    料号 CBL-310200（接原配短线，总长 15m 以内）
+10. Cat6 网线 5–10m（PC-ZED Box、PC-UR 控制柜）   x2   约 1,500–2,500
+11. 5 口千兆交换机（PC 只有一个网口时）            x1   约 2,500
+    例：TP-Link TL-SG105
+
+【备用】
+12. ZED 2i 官方 10m 双螺丝锁 USB 3.0 Type-C 线    x1   约 20,000
+    料号 CBL-221500（ZED 2i 直连 PC、要拉到 10m 时用）
+13. StarTech 工业级 4 口 USB 3.0 Hub ST4300USBM   x1   约 20,000
+    （每口 ESD 防护，附日本插头电源；给键盘鼠标等用，相机尽量不走 Hub）
+
+合计
+  3D 打印部分：约 8–10 万
+  线缆部分：  约 1 万
+  备用部分：  约 4 万
+  全部：      约 13–15 万
+
+====================================================
+二、不用买
+====================================================
+ - Bambu AMS HT：H2D Pro 套装自带
+ - Robotiq 转接口：现有 M8 e-Series 转接口能直接插 UR5e 手腕
+ - Robotiq 10m 线 / USB 转 RS485 / 24V 电源 / 保险丝：夹爪走 UR5e 手腕供电和通信
+ - ZED 2i 线：原配 4m 够用（10m 用备用第 12 项）
+ - PCIe USB 卡：相机都接 ZED Box
+
+====================================================
+三、装好以后怎么用
+====================================================
+
+【H2D Pro 料仓分配】
+  AMS 2 Pro：PLA / TPU / PLA-CF / Support for PA/PET
+  AMS HT   ：PAHT-CF（80°C 烘 8–12 小时，边烘边送料）
+  注：PA/PET 支撑先在 AMS HT 里烘好再放进 AMS 2 Pro；打完 2 小时内拆支撑。
+      TPU 95A HF 不能进 AMS，要从背面外挂。
+
+【A250T】
+  左喷头（硬化钢）：PETG-CF 或 PLA-CF
+  右喷头：Support for PLA/PETG（只打支撑接触面）
+  温度在 Luban 里手动设：PETG-CF 喷嘴 240–270°C、热床约 70°C；支撑 190–220°C
+  装模块后做三项校准：调平、Z 偏移、XY 偏移（约 45 分钟）
+
+【接线】
+  ZED X Mini --GMSL2 5m--> ZED Box
+  ZED 2i     --USB 4m----> ZED Box
+  ZED Box    --网线------> PC（ZED SDK 本地串流）
+  UR 控制柜  --网线------> PC
+  2F-140     直接插 UR5e 手腕
+
+【ROS 2 控制夹爪】
+  1. UR 控制柜装 RS-485 URCap（工具通信转发），卸掉其他 Robotiq URCap
+  2. ur_robot_driver 启动时加 use_tool_communication:=true，PC 上会出现虚拟串口
+  3. Robotiq ROS 2 驱动连这个虚拟串口（例：UR-Robotiq-Integrated-Driver）
+  4. 夹爪 LED 常亮蓝色 = 通了
+
+详细说明和来源：docs/purchase_list_zh.md
