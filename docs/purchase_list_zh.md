@@ -62,7 +62,7 @@
 - **烘干（不用改装打印机）**：PAHT-CF 和 PA/PET 支撑都要 80 °C 烘 8–12 小时。AMS 2 Pro 最多只能烘到 65 °C，不够，H2D Pro 套装里自带的 **AMS HT**（最高 85 °C）就能烘，不用另买。
   - PAHT-CF 常驻 AMS HT，边烘边送料。
   - PA/PET 支撑先在 AMS HT 里烘好，再放进 AMS 2 Pro。
-  - 料仓分配：AMS 2 Pro = PLA、PLA-CF、PA/PET 支撑（空一个位）；AMS HT = PAHT-CF；TPU 照旧外挂。
+  - 料仓分配（共 5 个位：AMS 2 Pro 4 个 + AMS HT 1 个）：AMS 2 Pro = PLA、TPU、PLA-CF、PA/PET 支撑；AMS HT = PAHT-CF。TPU 只有 Bambu「TPU for AMS」能放进 AMS，TPU 95A HF 要从背面外挂进料，那样 AMS 2 Pro 会多空一个位。
 - **支撑**：PA/PET 支撑打完 2 小时内拆掉，放久了吸潮会粘死。
 - **料仓接哪边**：AMS 接右侧固定热端。本体和支撑都从同一个喷嘴出，切片时支撑料只用在「支撑接触面」，可以少冲刷很多料。
 - **PET-CF / PPA-CF 不进这三个料仓**：它们只能走左侧升降热端，而且不能进 AMS。
