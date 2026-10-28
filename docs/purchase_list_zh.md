@@ -14,7 +14,7 @@
 | 6 | A250T | 1.75 mm PETG，1 kg，带料盘 | 例：Bambu PETG HF（スプール付き） | 1 | 必买 |
 | 7 | A250T | 双头打印模块 | Snapmaker SNM-23440 | 1 | 想打碳纤时才买 |
 | 8 | A250T | 双头模块用 0.4 mm 硬化钢喷嘴 | Snapmaker SNM-23445 | 1–2 | 跟 7 一起买 |
-| 9 | Robotiq | 夹爪转接口（ISO 9409，带 1 m 短线） | GRP-CPL-062 | 1 | 只有转接口不是这个型号时才买 |
+| 9 | Robotiq | 夹爪转接口（ISO 9409，带 1 m 短线） | GRP-CPL-062 | 1 | 必买（现在用的是 M8 的 e-Series 转接口，要长线直连 PC 就换这个） |
 | 10 | Robotiq | 10 m 高柔性线（M12 直头 → 散线） | CBL-COM-2065-10-HF | 1 | 必买 |
 | 11 | Robotiq | USB 转 RS485 | ACC-ADT-USB-RS485 | 1 | 必买 |
 | 12 | Robotiq | 24 V 导轨电源（2.5 A） | Mean Well HDR-60-24 | 1 | 必买 |
@@ -22,6 +22,8 @@
 | 14 | ZED 2i | 5 m / 10 m 螺丝锁 USB 3.0 Type-C 线 | CBL-221400 / CBL-221500 | 1 | 按长度二选一 |
 | 15 | ZED | 4 口 PCIe USB 3.0 卡（4 个独立通道） | StarTech PEXUSB3S44V | 1 | 推荐 |
 | 16 | ZED | 工业级外部供电 USB 3.0 Hub | StarTech ST4300USBM 或 ST4300USBMS | 1 | 必须用 Hub 时才买 |
+| 17 | ZED Mini | USB 3.0 Type-C 线 4 m | CBL-211200 | 1 | 必买 |
+| 18 | H2D Pro | Bambu AMS HT（单料位烘干送料，最高 85 °C） | SA008 | 1 | 打 PAHT-CF 就必买 |
 
 ---
 
@@ -57,7 +59,10 @@
 **打印要点**
 
 - **PAHT-CF**：喷嘴 260–290 °C，热床 80–100 °C，腔温 45–60 °C，要涂胶。
-- **烘干**：PAHT-CF 和 PA/PET 支撑都要 80 °C 烘 8–12 小时。AMS 2 Pro 最多只能烘到 65 °C，不够。有 AMS HT（最高 85 °C）就放那里烘，没有的话用烘箱。
+- **烘干（不用改装打印机）**：PAHT-CF 和 PA/PET 支撑都要 80 °C 烘 8–12 小时。AMS 2 Pro 最多只能烘到 65 °C，不够，所以加一台 **AMS HT**（最高 85 °C，自带电源线，用 6 针总线接打印机）。
+  - PAHT-CF 常驻 AMS HT，边烘边送料。
+  - PA/PET 支撑先在 AMS HT 里烘好，再放进 AMS 2 Pro。
+  - 料仓分配：AMS 2 Pro = PLA、PLA-CF、PA/PET 支撑（空一个位）；AMS HT = PAHT-CF；TPU 照旧外挂。
 - **支撑**：PA/PET 支撑打完 2 小时内拆掉，放久了吸潮会粘死。
 - **料仓接哪边**：AMS 接右侧固定热端。本体和支撑都从同一个喷嘴出，切片时支撑料只用在「支撑接触面」，可以少冲刷很多料。
 - **PET-CF / PPA-CF 不进这三个料仓**：它们只能走左侧升降热端，而且不能进 AMS。
@@ -104,6 +109,8 @@
 ---
 
 ## 3. Robotiq 2F-140 → PC（RS485，长线方案）
+
+> **现状**：现在装的是 M8 插头的 e-Series 转接口（方案 B 那种）。它配的线只能台面调试，要长线直连 PC，就换 GRP-CPL-062 走方案 A。如果夹爪装在 UR e-Series 手腕上，也可以不买线，让 UR 驱动把手腕的 RS485 转发给 PC。
 
 ### 先看转接口（coupling）
 
@@ -157,8 +164,10 @@
 
 ### 先确认型号
 
-- **ZED 2i / ZED Mini**：USB 3.0 Type-C，看第 4.1 节。
-- **ZED X / ZED X Mini**：GMSL2 Fakra 接口，看第 4.3 节。
+- 现在有 **ZED 2i 和 ZED Mini 各一台**，都是 USB 3.0 Type-C，看第 4.1、4.2、4.4 节。
+- ZED 2i 买 5 m（CBL-221400）或 10 m（CBL-221500）螺丝锁线；ZED Mini 买 4 m 线（CBL-211200）。Mini 再长要用带外部供电的有源延长线，而且要同时延长 USB 2.0，否则 IMU 读不到。
+- 两台必须各占一个 USB 3.0 控制器，用 PEXUSB3S44V 正好。
+- 第 4.3 节的 ZED X（GMSL2）留作参考，现在用不到。
 
 ### 4.1 ZED 2i / ZED Mini 官方线
 
