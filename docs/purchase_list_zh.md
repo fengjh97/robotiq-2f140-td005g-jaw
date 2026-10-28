@@ -2,10 +2,33 @@
 
 整理日期：2026-10-28。只写型号和官方料号，价格变动快，没有写。下单前以官网页面为准。
 
-## 一页总览
+## 一页总览（最终版：UR5e + ZED Box + H2D Pro + A250T）
 
-| # | 用在哪 | 品名 | 型号 / 料号 | 数量 | 必买？ |
-|---|---|---|---|---|---|
+### 要买的
+
+| # | 用在哪 | 品名 | 型号 / 料号 | 数量 |
+|---|---|---|---|---|
+| 1 | H2D Pro | Bambu PAHT-CF（黑，1 kg，带料盘） | — | 1 |
+| 2 | H2D Pro | Bambu Support for PA/PET（绿，0.5 kg） | S03-G1-1.75-500-SPL | 1 |
+| 3 | H2D Pro + A250T | Bambu PLA-CF（1 kg，带料盘） | — | 2（两台各一卷） |
+| 4 | H2D Pro | 胶棒（PAHT-CF 要涂胶） | Bambu 原装胶棒 | 1 |
+| 5 | A250T | Snapmaker 双头打印模块 | SNM-23440 | 1 |
+| 6 | A250T | 双头模块用 0.4 mm 硬化钢热端 | SNM-23445 | 1–2 |
+| 7 | A250T | Bambu PETG-CF（1 kg，带料盘） | — | 1 |
+| 8 | A250T | Bambu Support for PLA/PETG（0.5 kg） | S05-C0-1.75-500-SPL | 1 |
+| 9 | ZED X Mini | GMSL2 Fakra 延长线 5 m（公-母，接原配短线） | CBL-310200 | 1 |
+| 10 | ZED 2i | 5 m 螺丝锁 USB 3.0 Type-C 线（插 ZED Box） | CBL-221400（装得远换 10 m CBL-221500） | 1 |
+| 11 | 网络 | Cat6 网线（PC↔ZED Box、PC↔UR 控制柜） | 按距离，一般 5–10 m | 2 |
+| 12 | 网络 | 5 口千兆交换机（PC 只有一个网口时） | 例：TP-Link TL-SG105 | 1 |
+
+### 不用买（已有或方案变了）
+
+- Bambu AMS HT：H2D Pro 套装自带。
+- Robotiq 转接口：现有的 M8 e-Series 转接口能直接插 UR5e 手腕。
+- Robotiq 10 m 线、USB 转 RS485、24 V 电源、保险丝：夹爪走 UR5e 手腕内部供电和通信，不需要。
+- PCIe USB 卡、USB Hub：相机都插 ZED Box，不插 PC。ZED Box Mini 只有 1 个 USB 口，调试时要插键盘鼠标的话，再买带外部电源的 Hub（StarTech ST4300USBM）。
+
+---|---|---|---|---|---|
 | 1 | H2D Pro | Bambu PAHT-CF（黑，1 kg，带料盘） | — | 1 | 必买 |
 | 2 | H2D Pro | Bambu Support for PA/PET（绿，0.5 kg） | S03-G1-1.75-500-SPL | 1 | 必买 |
 | 3 | H2D Pro | Bambu PLA-CF（1 kg，带料盘） | — | 1 | 必买 |
