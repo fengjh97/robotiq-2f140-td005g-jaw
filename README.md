@@ -7,6 +7,8 @@ Robotiq 2F-140 自适应夹爪的自制指尖，用来从上往下抓**立着放
 
 > **只有 PLA、没有 TPU 时 → 用 [`v7_PLA_only/`](v7_PLA_only)**：纯 PLA 版，试作件约 1 小时，正式件约 7 小时。**拷 U 盘直接打用 [`v7_PLA_only/USB_gcode/`](v7_PLA_only/USB_gcode)**（已经切好片的 `.gcode.3mf`，分左喷头和右喷头两个版本）。下面 1_trial / 2_final 里的是 PLA+TPU 的 v6。
 
+> **采购清单 → [`docs/purchase_list_zh.md`](docs/purchase_list_zh.md)**：H2D Pro 三个料仓用什么料、Snapmaker A250T 耗材和改装件、Robotiq 夹爪到 PC 的 RS485 全套线材、ZED 相机长线和 USB Hub。
+
 ## 状态
 - [x] 运动学搜索、碰撞检查、有限元分析（PLA）
 - [x] 试作件文件（S/M/L 三种尺寸）
