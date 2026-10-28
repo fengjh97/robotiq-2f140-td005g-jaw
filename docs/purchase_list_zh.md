@@ -14,11 +14,11 @@
 | 6 | A250T | 1.75 mm PETG，1 kg，带料盘 | 例：Bambu PETG HF（スプール付き） | 1 | 必买 |
 | 7 | A250T | 双头打印模块 | Snapmaker SNM-23440 | 1 | 想打碳纤时才买 |
 | 8 | A250T | 双头模块用 0.4 mm 硬化钢喷嘴 | Snapmaker SNM-23445 | 1–2 | 跟 7 一起买 |
-| 9 | Robotiq | 夹爪转接口（ISO 9409，带 1 m 短线） | GRP-CPL-062 | 1 | 必买（现在插在 FANUC CRX 手腕上的是 M8 转接口，要长线直连 PC 就换这个） |
-| 10 | Robotiq | 10 m 高柔性线（M12 直头 → 散线） | CBL-COM-2065-10-HF | 1 | 必买 |
-| 11 | Robotiq | USB 转 RS485 | ACC-ADT-USB-RS485 | 1 | 必买 |
-| 12 | Robotiq | 24 V 导轨电源（2.5 A） | Mean Well HDR-60-24 | 1 | 必买 |
-| 13 | Robotiq | 2 A 保险丝（电源没有过流保护时） | Phoenix Contact 0916605 | 1 | 可选 |
+| 9 | Robotiq | UR5e 新款手腕用 e-Series 转接口（M8 公头） | GRP-ES-CPL-077 | 1 | 只有 UR5e 是新款母头手腕（2024-10 以后出厂）时才买；老款公头手腕直接用现有的 GRP-ES-CPL-062 |
+| 10 | Robotiq | 10 m 高柔性线（M12 直头 → 散线） | CBL-COM-2065-10-HF | — | UR5e 手腕直连后不需要 |
+| 11 | Robotiq | USB 转 RS485 | ACC-ADT-USB-RS485 | — | UR5e 手腕直连后不需要 |
+| 12 | Robotiq | 24 V 导轨电源（2.5 A） | Mean Well HDR-60-24 | — | UR5e 手腕直连后不需要（手腕供电） |
+| 13 | Robotiq | 2 A 保险丝（电源没有过流保护时） | Phoenix Contact 0916605 | — | 不需要 |
 | 14 | ZED 2i | 5 m / 10 m 螺丝锁 USB 3.0 Type-C 线 | CBL-221400 / CBL-221500 | 1 | 按长度二选一 |
 | 15 | ZED | 4 口 PCIe USB 3.0 卡（4 个独立通道） | StarTech PEXUSB3S44V | 1 | 推荐 |
 | 16 | ZED | 工业级外部供电 USB 3.0 Hub | StarTech ST4300USBM 或 ST4300USBMS | 1 | 必须用 Hub 时才买 |
@@ -110,10 +110,10 @@
 
 ## 3. Robotiq 2F-140 → PC（RS485，长线方案）
 
-> **现状**：夹爪直接插在 FANUC CRX 的手腕上。Robotiq 的 CRX 套件（2F-140 是 AGC-CRX-KIT-140）用的就是 M8 的 e-Series 转接口 GRP-ES-CPL-062，它的接口和针脚跟 CRX 手腕一致，所以现在是方案 B 的情况。
-> - **要长线直连 PC**：换成 GRP-CPL-062 走方案 A。CRX 法兰和 UR 一样是 ISO 9409-1-50-4-M6，可以直接装；10 m 线沿机械臂外侧走，手腕接口不用。
-> - **只想先在台面上用 PC 试控制**：买 ACC-TRBLS-KIT-M8 就够，但不能在机械臂运动时用。
-> - **不改线**：继续插在手腕上，装 Robotiq CRX 插件，从 CRX 控制器（TP / KAREL）控制夹爪。
+> **现状（更新）**：机械臂换成 **UR5e**。现有的 M8 e-Series 转接口原本就是给 UR e-Series 手腕设计的，夹爪直接插手腕，供电和 RS485 都走机械臂内部，**不用再拉外部线**。
+> - 先看 UR5e 是哪一代手腕：老款是公头手腕，用现有的 GRP-ES-CPL-062；2024-10-01 以后出厂的新款是母头手腕（UR5e 序列号 ≥ 20245500899），要换 GRP-ES-CPL-077。
+> - PC 控制夹爪：PC 用网线连 UR 控制柜。夹爪命令可以走 Robotiq URCap 在控制柜上开的 socket，也可以用 UR 的手腕 RS485 转发，把手腕串口转发成 PC 上的虚拟串口。
+> - 下面的方案 A（10 m 线 + USB-RS485）只在夹爪要离开机械臂、在台面上单独用时才需要。
 
 ### 先看转接口（coupling）
 
