@@ -23,7 +23,7 @@
 | 15 | ZED | 4 口 PCIe USB 3.0 卡（4 个独立通道） | StarTech PEXUSB3S44V | 1 | 推荐 |
 | 16 | ZED | 工业级外部供电 USB 3.0 Hub | StarTech ST4300USBM 或 ST4300USBMS | 1 | 必须用 Hub 时才买 |
 | 17 | ZED Mini | USB 3.0 Type-C 线 4 m | CBL-211200 | 1 | 必买 |
-| 18 | H2D Pro | Bambu AMS HT（单料位烘干送料，最高 85 °C） | SA008 | 1 | 打 PAHT-CF 就必买 |
+| 18 | H2D Pro | Bambu AMS HT（单料位烘干送料，最高 85 °C） | SA008 | — | 已有，不用买 |
 
 ---
 
@@ -59,7 +59,7 @@
 **打印要点**
 
 - **PAHT-CF**：喷嘴 260–290 °C，热床 80–100 °C，腔温 45–60 °C，要涂胶。
-- **烘干（不用改装打印机）**：PAHT-CF 和 PA/PET 支撑都要 80 °C 烘 8–12 小时。AMS 2 Pro 最多只能烘到 65 °C，不够，所以加一台 **AMS HT**（最高 85 °C，自带电源线，用 6 针总线接打印机）。
+- **烘干（不用改装打印机）**：PAHT-CF 和 PA/PET 支撑都要 80 °C 烘 8–12 小时。AMS 2 Pro 最多只能烘到 65 °C，不够，H2D Pro 套装里自带的 **AMS HT**（最高 85 °C）就能烘，不用另买。
   - PAHT-CF 常驻 AMS HT，边烘边送料。
   - PA/PET 支撑先在 AMS HT 里烘好，再放进 AMS 2 Pro。
   - 料仓分配：AMS 2 Pro = PLA、PLA-CF、PA/PET 支撑（空一个位）；AMS HT = PAHT-CF；TPU 照旧外挂。
